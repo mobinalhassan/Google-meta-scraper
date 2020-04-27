@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from src.utils import get_full_path
 from src.parser import keyword_map
 from pyvirtualdisplay import Display
+import xlsxwriter
 display = Display(visible=0, size=(800, 600))
 display.start()
 
