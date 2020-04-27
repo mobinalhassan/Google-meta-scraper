@@ -4,24 +4,29 @@ from time import sleep
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from src.scrap_counties_list import usa_county_list,local_listing
+from src.scrap_counties_list import usa_county_list,local_listing,special_list
 from selenium.webdriver.common.keys import Keys
 from src.utils import get_full_path
 from src.parser import keyword_map
+from fake_useragent import UserAgent
+# from selenium.webdriver.common.action_chains import ActionChains
+
 from pyvirtualdisplay import Display
+# import random
 import xlsxwriter
 display = Display(visible=0, size=(800, 600))
 display.start()
 
-options = Options()
-options.add_argument("start-maximized")
-options.add_argument("--disable-extensions")
-# options.add_argument('--headless')
-options.add_argument('window-size=1920x1080')
-options.add_argument('--no-sandbox')
-options.add_argument("--hide-scrollbars")
-options.add_argument("disable-infobars")
-options.add_argument('--disable-dev-shm-usage')
+# options = Options()
+# options.add_argument("start-maximized")
+# options.add_argument("--disable-extensions")
+# # options.add_argument('--headless')
+# options.add_argument('window-size=1920x1080')
+# options.add_argument('--no-sandbox')
+# options.add_argument("--hide-scrollbars")
+# options.add_argument("disable-infobars")
+# options.add_argument('--disable-dev-shm-usage')
+# options.add_argument('--proxy-server=46.102.106.37:13228')
 
 
 class FenceInstallerScraper:
@@ -35,10 +40,26 @@ class FenceInstallerScraper:
         self.fance_installer = {'County': county_single, 'Company/Title': '', 'State': state, 'Website': '',
                                 'Description': '', 'Rank': '',
                                 'Ranked-page-url': ''}
-        # self.pro_links_list = []
-
         self.county = county
         self.rank_index = 1
+        options = Options()
+        options.add_argument("start-maximized")
+        options.add_argument("--disable-extensions")
+        # options.add_argument('--headless')
+        ua = UserAgent()
+        useragent = ua.random
+        print(f'User Agent ==> {useragent}')
+        options.add_argument(f'user-agent={useragent}')
+        options.add_argument('window-size=1920x1080')
+        options.add_argument('--no-sandbox')
+        options.add_argument("--hide-scrollbars")
+        options.add_argument("disable-infobars")
+        options.add_argument('--disable-dev-shm-usage')
+        # proxies = ['10.0.1.1', '10.0.1.2', '10.0.1.3','111.119.178.137']
+        # proxy = random.choice(proxies)
+        # print(f'Random IP test ==> {proxy}')
+        # options.add_argument('--proxy-server=111.119.178.137:82')
+
         self.driver = webdriver.Chrome(options=options)
 
     def __del__(self):
@@ -76,8 +97,10 @@ class FenceInstallerScraper:
         input_q.send_keys(query)
         input_q.send_keys(Keys.RETURN)
 
-    def check_listing(self,weblink):
-        pass
+    def special_ext(self, param):
+        if param.split('.')[-1] in special_list or param.split('.')[-2] in special_list:
+            return False
+        return True
 
     def get_data_with_rank(self):
         list_of_q_result = self.driver.find_elements_by_css_selector('div.g:nth-of-type(n)')
@@ -128,29 +151,39 @@ class FenceInstallerScraper:
                 print(f'Error in getting Ranked page Link {error}')
 
             # if not self.check_listing(self.fance_installer['Website']):
-            if not self.fance_installer['Website'] in local_listing:
-                if keyword_map(self.fance_installer):
-                    print()
-                    self.fence_installers.append(self.fance_installer.copy())
-                    print(self.fance_installer)
-                    print('*' * 80)
-                    print()
+            if not self.fance_installer['Website'] in local_listing :
+            # if not self.fance_installer['Website'] in local_listing:
+                if self.special_ext(self.fance_installer['Website']):
+                    if keyword_map(self.fance_installer):
+                        print()
+                        self.fence_installers.append(self.fance_installer.copy())
+                        print(self.fance_installer)
+                        print('*' * 80)
+                        print()
 
     def get_query_records(self):
         try:
             print(self.pro_url)
             self.driver.get(self.pro_url)
+            user_agent = self.driver.execute_script("return navigator.userAgent;")
+            print(f'Inner User aggent ==> {user_agent}')
+            # action = ActionChains(self.driver)
+            # eee = self.driver.find_element_by_css_selector('input.gLFyf')
+            # action.move_to_element(eee).perform()
+            # action.move_by_offset(600,200)
+            # action.perform()
             # self.set_cookies()
-            sleep(1)
+            # input('Something..... = ')
+            sleep(5)
             self.input_query()
-            sleep(2)
+            sleep(8)
             self.get_data_with_rank()
             pages_remain=True
             while pages_remain:
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
                     next_link.click()
-                    sleep(2)
+                    sleep(5)
                     self.get_data_with_rank()
                 except NoSuchElementException:
                     print('No next page')

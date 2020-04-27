@@ -1,4 +1,9 @@
-local_listing = ['books.google.com','books.google.com.pk', 'https://www.google.com/business', 'http://www.areaconnect.com/',
+special_list=['gov','edu','us','org','ie','pl','ru','top','id','in']
+local_listing = ['https://allprattville.com/','https://allprattville.com','allprattville.com','books.google.com',
+                 'softtechies.com','http://softtechies.com/','http://softtechies.com','rememberforfencing.top',
+                 'https://rememberforfencing.top/','https://rememberforfencing.top',
+                 'https://www.facebook.com','www.facebook.com','https://www.facebook.com/',
+                 'books.google.com.pk', 'https://www.google.com/business', 'http://www.areaconnect.com/',
                  'http://www.merchantcircle.com/signup/', 'https://www.h1ad.com/', 'http://www.insiderpages.com/',
                  'https://foursquare.com/', 'http://www.city-data.com/', 'http://www.topix.com/',
                  'https://register.kudzu.com/packageSelect.do', 'https://www.bingplaces.com/',

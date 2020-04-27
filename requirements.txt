@@ -4,3 +4,4 @@ requests==2.22.0
 pandas==0.25.1
 PyVirtualDisplay==0.2.5
 XlsxWriter==1.2.1
+fake-useragent==0.1.11
