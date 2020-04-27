@@ -1,29 +1,3 @@
-import pandas as pd
-from src.test import counties_list
-
-# counties_data=pd.read_csv('../data/counties_list.csv')
-# counties_dicts=counties_data['counties_name'].to_list()
-# print(type(counties_dicts))
-# # print(list(counties_dicts)[0].split(','))
-# for i,counties_l in enumerate(counties_dicts):
-#     # for c in list(counties_l):
-#     print(counties_l)
-
-# step 1
-# usa_county_list = [''.join(county['counties_name'].split('County')) for county in counties_list]
-
-# print(usa_county_list)
-# print(len(usa_county_list))
-# test2
-# for us in usa_county_list:
-#     print(us.split(','))
-# print(len(usa_county_list))
-
-# test1
-# for county in counties_list:
-#     ''.join('Autauga County, Alabama'.split('County'))
-#     print(county['counties_name'])
-
 local_listing = ['books.google.com.pk', 'https://www.google.com/business', 'http://www.areaconnect.com/',
                  'http://www.merchantcircle.com/signup/', 'https://www.h1ad.com/', 'http://www.insiderpages.com/',
                  'https://foursquare.com/', 'http://www.city-data.com/', 'http://www.topix.com/',
