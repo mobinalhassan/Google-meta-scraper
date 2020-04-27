@@ -1,4 +1,4 @@
-local_listing = ['books.google.com.pk', 'https://www.google.com/business', 'http://www.areaconnect.com/',
+local_listing = ['books.google.com','books.google.com.pk', 'https://www.google.com/business', 'http://www.areaconnect.com/',
                  'http://www.merchantcircle.com/signup/', 'https://www.h1ad.com/', 'http://www.insiderpages.com/',
                  'https://foursquare.com/', 'http://www.city-data.com/', 'http://www.topix.com/',
                  'https://register.kudzu.com/packageSelect.do', 'https://www.bingplaces.com/',
