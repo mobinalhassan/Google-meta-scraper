@@ -72,6 +72,7 @@ class FenceInstallerScraper:
         # q_keyword = '\"agricultural\" and \"farm\" fence installers '
         q_keyword = 'agricultural and farm fence installers '
         query = f'{q_keyword}{self.county}'
+        print(f'Query ==> {query}')
         input_q.send_keys(query)
         input_q.send_keys(Keys.RETURN)
 
