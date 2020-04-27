@@ -176,7 +176,7 @@ class FenceInstallerScraper:
             # input('Something..... = ')
             sleep(5)
             self.input_query()
-            sleep(8)
+            sleep(15)
             self.get_data_with_rank()
             pages_remain=True
             while pages_remain:
