@@ -37,6 +37,7 @@ class FenceInstallerScraper:
         county_split = str(county).split(',')
         county_single = county_split[0]
         state = county_split[1]
+        self.check_irrelevent=[]
         self.fance_installer = {'County': county_single, 'Company/Title': '', 'State': state, 'Website': '',
                                 'Description': '', 'Rank': '',
                                 'Ranked-page-url': ''}
@@ -82,7 +83,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_test.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -92,7 +93,7 @@ class FenceInstallerScraper:
         # "agricultural" and "farm"
         # q_keyword = '\"agricultural\" and \"farm\" fence installers '
         q_keyword = 'agricultural and farm fence installers '
-        query = f'{q_keyword}{self.county}'
+        query = f'{q_keyword}{self.county} site:facebook.com'
         print(f'Query ==> {query}')
         input_q.send_keys(query)
         input_q.send_keys(Keys.RETURN)
@@ -101,6 +102,15 @@ class FenceInstallerScraper:
         if param.split('.')[-1] in special_list or param.split('.')[-2] in special_list:
             return False
         return True
+
+    def inrelevent(self,prami):
+        # self.check_irrelevent
+        for word in prami:
+            if word in ['directory','pages']:
+                print('Misssssssssssssss......')
+                return True
+
+        return False
 
     def get_data_with_rank(self):
         list_of_q_result = self.driver.find_elements_by_css_selector('div.g:nth-of-type(n)')
@@ -117,7 +127,11 @@ class FenceInstallerScraper:
                 #     child.decompose()
 
                 web_link = str(web_link_raw.get_text()).split(' ')[0]
-
+                try:
+                    self.check_irrelevent=str(web_link_raw.get_text()).split(' ')[1:]
+                    print(self.check_irrelevent)
+                except IndexError:
+                    pass
                 self.fance_installer['Website'] = str(web_link).strip(' ').strip()
                 # print(f'Web link => {web_link}')
             except Exception as error:
@@ -151,10 +165,11 @@ class FenceInstallerScraper:
                 print(f'Error in getting Ranked page Link {error}')
 
             # if not self.check_listing(self.fance_installer['Website']):
-            if not self.fance_installer['Website'] in local_listing :
+            if not self.inrelevent(self.check_irrelevent) :
             # if not self.fance_installer['Website'] in local_listing:
                 if self.special_ext(self.fance_installer['Website']):
                     if keyword_map(self.fance_installer):
+                    #     keyword_map(self.fance_installer)
                         print()
                         self.fence_installers.append(self.fance_installer.copy())
                         print(self.fance_installer)
@@ -174,20 +189,29 @@ class FenceInstallerScraper:
             # action.perform()
             # self.set_cookies()
             # input('Something..... = ')
-            sleep(5)
+            sleep(4)
             self.input_query()
-            sleep(15)
+            sleep(10)
             self.get_data_with_rank()
             pages_remain=True
-            while pages_remain:
+            for i in range(2):
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
                     next_link.click()
-                    sleep(5)
+                    sleep(4)
                     self.get_data_with_rank()
                 except NoSuchElementException:
                     print('No next page')
-                    pages_remain=False
+
+            # while pages_remain:
+            #     try:
+            #         next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
+            #         next_link.click()
+            #         sleep(5)
+            #         self.get_data_with_rank()
+            #     except NoSuchElementException:
+            #         print('No next page')
+            #         pages_remain=False
 
             self.save_excel_file()
 
