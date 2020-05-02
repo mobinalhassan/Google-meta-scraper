@@ -83,7 +83,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_6.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_9.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -189,7 +189,7 @@ class FenceInstallerScraper:
             # action.perform()
             # self.set_cookies()
             # input('Something..... = ')
-            sleep(10)
+            sleep(5)
             self.input_query()
             sleep(20)
             self.get_data_with_rank()
