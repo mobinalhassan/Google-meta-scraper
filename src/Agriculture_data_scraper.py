@@ -165,7 +165,7 @@ class FenceInstallerScraper:
                 print(f'Error in getting Ranked page Link {error}')
 
             # if not self.check_listing(self.fance_installer['Website']):
-            if not self.inrelevent(self.check_irrelevent) :
+            if not self.inrelevent(self.check_irrelevent):
             # if not self.fance_installer['Website'] in local_listing:
                 if self.special_ext(self.fance_installer['Website']):
                     if keyword_map(self.fance_installer):
@@ -189,16 +189,16 @@ class FenceInstallerScraper:
             # action.perform()
             # self.set_cookies()
             # input('Something..... = ')
-            sleep(4)
+            sleep(5)
             self.input_query()
-            sleep(10)
+            sleep(15)
             self.get_data_with_rank()
             pages_remain=True
             for i in range(2):
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
                     next_link.click()
-                    sleep(4)
+                    sleep(5)
                     self.get_data_with_rank()
                 except NoSuchElementException:
                     print('No next page')
