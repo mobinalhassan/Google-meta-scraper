@@ -83,7 +83,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_4.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_5.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -189,16 +189,16 @@ class FenceInstallerScraper:
             # action.perform()
             # self.set_cookies()
             # input('Something..... = ')
-            sleep(5)
+            sleep(10)
             self.input_query()
-            sleep(15)
+            sleep(20)
             self.get_data_with_rank()
             pages_remain=True
             for i in range(2):
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
                     next_link.click()
-                    sleep(5)
+                    sleep(10)
                     self.get_data_with_rank()
                 except NoSuchElementException:
                     print('No next page')
