@@ -83,7 +83,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_4.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -107,7 +107,7 @@ class FenceInstallerScraper:
         # self.check_irrelevent
         for word in prami:
             if word in ['directory','pages']:
-                print('Misssssssssssssss......')
+                # print('Misssssssssssssss......')
                 return True
 
         return False
@@ -129,7 +129,7 @@ class FenceInstallerScraper:
                 web_link = str(web_link_raw.get_text()).split(' ')[0]
                 try:
                     self.check_irrelevent=str(web_link_raw.get_text()).split(' ')[1:]
-                    print(self.check_irrelevent)
+                    # print(self.check_irrelevent)
                 except IndexError:
                     pass
                 self.fance_installer['Website'] = str(web_link).strip(' ').strip()
