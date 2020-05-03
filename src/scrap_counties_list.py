@@ -309,67 +309,10 @@ local_listing = ['https://allprattville.com/', 'https://books.google.com', 'http
 #                    'Florence , Wisconsin', 'Manitowoc , Wisconsin', 'Milwaukee , Wisconsin', 'Oconto , Wisconsin',
 #                    'Pepin , Wisconsin', 'Price , Wisconsin', 'Waukesha , Wisconsin']
 
-usa_county_list=[
-    # 'Sumter , Georgia', 'Talbot , Georgia', 'Taliaferro , Georgia',
-    #                'Tattnall , Georgia', 'Taylor , Georgia', 'Telfair , Georgia', 'Terrell , Georgia',
-    #                'Thomas , Georgia', 'Tift , Georgia', 'Toombs , Georgia', 'Towns , Georgia', 'Treutlen , Georgia',
-    #                'Troup , Georgia', 'Turner , Georgia', 'Twiggs , Georgia', 'Union , Georgia', 'Upson , Georgia',
-    #                'Walker , Georgia', 'Walton , Georgia', 'Ware , Georgia', 'Warren , Georgia', 'Washington , Georgia',
-    #                'Wayne , Georgia', 'Webster , Georgia', 'Wheeler , Georgia', 'White , Georgia',
-    #                'Whitfield , Georgia', 'Wilcox , Georgia',
-    #              'Wilkes , Georgia', 'Wilkinson , Georgia',
-    #                'Worth , Georgia', 'Ada , Idaho', 'Adams , Idaho', 'Bannock , Idaho', 'Bear Lake , Idaho',
-    #                'Benewah , Idaho', 'Bingham , Idaho', 'Blaine , Idaho', 'Boise , Idaho', 'Bonner , Idaho',
-    #                'Bonneville , Idaho', 'Boundary , Idaho', 'Butte , Idaho', 'Camas , Idaho', 'Canyon , Idaho',
-    #                'Caribou , Idaho', 'Cassia , Idaho', 'Clark , Idaho', 'Clearwater , Idaho', 'Custer , Idaho',
-    #                'Elmore , Idaho', 'Franklin , Idaho', 'Fremont , Idaho', 'Gem , Idaho', 'Gooding , Idaho',
-    #                'Idaho , Idaho', 'Jefferson , Idaho', 'Jerome , Idaho', 'Kootenai , Idaho', 'Latah , Idaho',
-
-                   # 'Lemhi , Idaho', 'Lewis , Idaho', 'Lincoln , Idaho', 'Madison , Idaho', 'Minidoka , Idaho',
-                   # 'Nez Perce , Idaho', 'Oneida , Idaho', 'Owyhee , Idaho', 'Payette , Idaho', 'Power , Idaho',
-                   # 'Shoshone , Idaho', 'Teton , Idaho', 'Twin Falls , Idaho', 'Valley , Idaho', 'Washington , Idaho',
-                   # 'Adams , Illinois', 'Alexander , Illinois', 'Bond , Illinois', 'Boone , Illinois',
-                   # 'Brown , Illinois', 'Bureau , Illinois', 'Calhoun , Illinois', 'Carroll , Illinois',
-                   # 'Cass , Illinois', 'Champaign , Illinois', 'Christian , Illinois', 'Clark , Illinois',
-
-                   # 'Clay , Illinois', 'Clinton , Illinois', 'Coles , Illinois', 'Cook , Illinois',
-                   # 'Crawford , Illinois', 'Cumberland , Illinois', 'DeKalb , Illinois', 'DeWitt , Illinois',
-                   # 'Douglas , Illinois', 'DuPage , Illinois', 'Edgar , Illinois', 'Edwards , Illinois',
-                   # 'Effingham , Illinois', 'Fayette , Illinois', 'Ford , Illinois', 'Franklin , Illinois',
-                   # 'Fulton , Illinois', 'Gallatin , Illinois', 'Greene , Illinois', 'Grundy , Illinois',
-                   # 'Hamilton , Illinois','Hancock , Illinois', 'Hardin , Illinois', 'Henderson , Illinois',
-                   # 'Henry , Illinois', 'Iroquois , Illinois', 'Jackson , Illinois', 'Jasper , Illinois',
-                   # 'Jefferson , Illinois',
-    # 'Jersey , Illinois', 'Jo Daviess , Illinois', 'Johnson , Illinois',
-    #                'Kane , Illinois', 'Kankakee , Illinois', 'Kendall , Illinois', 'Knox , Illinois', 'Lake , Illinois',
-    #                'LaSalle , Illinois', 'Lawrence , Illinois', 'Lee , Illinois', 'Livingston , Illinois',
-    #                'Logan , Illinois', 'McDonough , Illinois', 'McHenry , Illinois', 'McLean , Illinois',
-    #                'Macon , Illinois', 'Macoupin , Illinois', 'Madison , Illinois', 'Marion , Illinois',
-    #                'Marshall , Illinois', 'Mason , Illinois', 'Massac , Illinois', 'Menard , Illinois',
-    #                'Mercer , Illinois', 'Monroe , Illinois', 'Montgomery , Illinois', 'Morgan , Illinois',
-
-                   # 'Moultrie , Illinois', 'Ogle , Illinois', 'Peoria , Illinois', 'Perry , Illinois',
-                   # 'Piatt , Illinois', 'Pike , Illinois', 'Pope , Illinois', 'Pulaski , Illinois', 'Putnam , Illinois',
-                   # 'Randolph , Illinois', 'Richland , Illinois', 'Rock Island , Illinois', 'Saint Clair , Illinois',
-                   # 'Saline , Illinois', 'Sangamon , Illinois', 'Schuyler , Illinois', 'Scott , Illinois',
-                   # 'Shelby , Illinois', 'Stark , Illinois', 'Stephenson , Illinois', 'Tazewell , Illinois',
-                   # 'Union , Illinois', 'Vermilion , Illinois', 'Wabash , Illinois', 'Warren , Illinois',
-                   # 'Washington , Illinois', 'Wayne , Illinois', 'White , Illinois', 'Whiteside , Illinois',
-
-                   # 'Will , Illinois', 'Williamson , Illinois', 'Winnebago , Illinois', 'Woodford , Illinois',
-                   # 'Adams , Indiana', 'Allen , Indiana', 'Bartholomew , Indiana', 'Benton , Indiana',
-                   # 'Blackford , Indiana', 'Boone , Indiana', 'Brown , Indiana', 'Carroll , Indiana', 'Cass , Indiana',
-                   # 'Clark , Indiana', 'Clay , Indiana', 'Clinton , Indiana', 'Crawford , Indiana', 'Daviess , Indiana',
-                   # 'Dearborn , Indiana', 'Decatur , Indiana', 'DeKalb , Indiana', 'Delaware , Indiana',
-                   # 'Dubois , Indiana', 'Elkhart , Indiana', 'Fayette , Indiana', 'Floyd , Indiana'
-
-                    #**********************
-
-    'Chickasaw , Iowa', 'Clarke , Iowa', 'Clay , Iowa', 'Clayton , Iowa',
-                   'Clinton , Iowa', 'Crawford , Iowa', 'Dallas , Iowa', 'Davis , Iowa', 'Decatur , Iowa',
-                   'Delaware , Iowa', 'Des Moines , Iowa', 'Dickinson , Iowa', 'Dubuque , Iowa', 'Emmet , Iowa',
-
-
+usa_county_list=['Lyon , Iowa', 'Madison , Iowa', 'Mahaska , Iowa', 'Marion , Iowa', 'Marshall , Iowa',
+                   'Mills , Iowa', 'Mitchell , Iowa', 'Monona , Iowa', 'Monroe , Iowa', 'Montgomery , Iowa',
+                   'Muscatine , Iowa', "O'Brien , Iowa", 'Osceola , Iowa', 'Page , Iowa', 'Palo Alto , Iowa',
+                   'Plymouth , Iowa', 'Pocahontas , Iowa', 'Polk , Iowa', 'Pottawattamie , Iowa', 'Poweshiek , Iowa',
 ]
 usa_county_list1 = [
     # 'Autauga , Alabama', 'Baldwin , Alabama', 'Barbour , Alabama', 'Bibb , Alabama', 'Blount , Alabama',
@@ -584,15 +527,17 @@ usa_county_list1 = [
                    # 'Clinton , Iowa', 'Crawford , Iowa', 'Dallas , Iowa', 'Davis , Iowa', 'Decatur , Iowa',
                    # 'Delaware , Iowa', 'Des Moines , Iowa', 'Dickinson , Iowa', 'Dubuque , Iowa', 'Emmet , Iowa',
 
-                   'Fayette , Iowa', 'Floyd , Iowa', 'Franklin , Iowa', 'Fremont , Iowa', 'Greene , Iowa',
-                   'Grundy , Iowa', 'Guthrie , Iowa', 'Hamilton , Iowa', 'Hancock , Iowa', 'Hardin , Iowa',
-                   'Harrison , Iowa', 'Henry , Iowa', 'Howard , Iowa', 'Humboldt , Iowa', 'Ida , Iowa', 'Iowa , Iowa',
-                   'Jackson , Iowa', 'Jasper , Iowa', 'Jefferson , Iowa', 'Johnson , Iowa', 'Jones , Iowa',
-                   'Keokuk , Iowa', 'Kossuth , Iowa', 'Lee , Iowa', 'Linn , Iowa', 'Louisa , Iowa', 'Lucas , Iowa',
-                   'Lyon , Iowa', 'Madison , Iowa', 'Mahaska , Iowa', 'Marion , Iowa', 'Marshall , Iowa',
-                   'Mills , Iowa', 'Mitchell , Iowa', 'Monona , Iowa', 'Monroe , Iowa', 'Montgomery , Iowa',
-                   'Muscatine , Iowa', "O'Brien , Iowa", 'Osceola , Iowa', 'Page , Iowa', 'Palo Alto , Iowa',
-                   'Plymouth , Iowa', 'Pocahontas , Iowa', 'Polk , Iowa', 'Pottawattamie , Iowa', 'Poweshiek , Iowa',
+                   # 'Fayette , Iowa', 'Floyd , Iowa', 'Franklin , Iowa', 'Fremont , Iowa', 'Greene , Iowa',
+                   # 'Grundy , Iowa', 'Guthrie , Iowa', 'Hamilton , Iowa', 'Hancock , Iowa', 'Hardin , Iowa',
+                   # 'Harrison , Iowa', 'Henry , Iowa', 'Howard , Iowa', 'Humboldt , Iowa', 'Ida , Iowa', 'Iowa , Iowa',
+                   # 'Jackson , Iowa', 'Jasper , Iowa', 'Jefferson , Iowa', 'Johnson , Iowa', 'Jones , Iowa',
+                   # 'Keokuk , Iowa', 'Kossuth , Iowa', 'Lee , Iowa', 'Linn , Iowa', 'Louisa , Iowa', 'Lucas , Iowa',
+
+                   # 'Lyon , Iowa', 'Madison , Iowa', 'Mahaska , Iowa', 'Marion , Iowa', 'Marshall , Iowa',
+                   # 'Mills , Iowa', 'Mitchell , Iowa', 'Monona , Iowa', 'Monroe , Iowa', 'Montgomery , Iowa',
+                   # 'Muscatine , Iowa', "O'Brien , Iowa", 'Osceola , Iowa', 'Page , Iowa', 'Palo Alto , Iowa',
+                   # 'Plymouth , Iowa', 'Pocahontas , Iowa', 'Polk , Iowa', 'Pottawattamie , Iowa', 'Poweshiek , Iowa',
+
                    'Ringgold , Iowa', 'Sac , Iowa', 'Scott , Iowa', 'Shelby , Iowa', 'Sioux , Iowa', 'Story , Iowa',
                    'Tama , Iowa', 'Taylor , Iowa', 'Union , Iowa', 'Van Buren , Iowa', 'Wapello , Iowa',
                    'Warren , Iowa', 'Washington , Iowa', 'Wayne , Iowa', 'Webster , Iowa', 'Winnebago , Iowa',

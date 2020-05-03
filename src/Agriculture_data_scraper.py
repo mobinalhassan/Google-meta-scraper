@@ -58,6 +58,7 @@ class FenceInstallerScraper:
         # options.add_argument('--headless')
         ua = UserAgent()
         useragent = ua.random
+        # useragent = ua.chrome
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
         # options.add_argument('--proxy-server=%s' % PROXY)
@@ -95,7 +96,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_24.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_26.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
