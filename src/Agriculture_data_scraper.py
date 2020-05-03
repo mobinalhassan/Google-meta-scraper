@@ -10,18 +10,14 @@ from src.utils import get_full_path
 from src.parser import keyword_map
 from fake_useragent import UserAgent
 # from selenium.webdriver.common.action_chains import ActionChains
-# import socks
-# import socket
-# from urllib.request import Request, urlopen
-# socks.set_default_proxy(socks.SOCKS5, "localhost", 9050)
-# socket.socket = socks.socksocket
-from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
+
+# from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 
 from pyvirtualdisplay import Display
 # import random
 import xlsxwriter
-display = Display(visible=0, size=(800, 600))
-display.start()
+# display = Display(visible=0, size=(800, 600))
+# display.start()
 
 # options = Options()
 # options.add_argument("start-maximized")
@@ -49,11 +45,13 @@ class FenceInstallerScraper:
                                 'Ranked-page-url': ''}
         self.county = county
         self.rank_index = 1
-        req_proxy = RequestProxy()  # you may get different number of proxy when  you run this at each time
-        proxies = req_proxy.get_proxy_list()
-        PROXY = proxies[0].get_address()
-        print(PROXY)
-        print(proxies[0].country)
+        # PROXY = "12.345.678.910:8080"
+
+        # req_proxy = RequestProxy()  # you may get different number of proxy when  you run this at each time
+        # proxies = req_proxy.get_proxy_list()
+        # PROXY = proxies[0].get_address()
+        # print(PROXY)
+        # print(proxies[0].country)
         options = Options()
         options.add_argument("start-maximized")
         # options.add_argument("--disable-extensions")
@@ -62,7 +60,7 @@ class FenceInstallerScraper:
         useragent = ua.random
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
-        options.add_argument('--proxy-server=%s' % PROXY)
+        # options.add_argument('--proxy-server=%s' % PROXY)
         options.add_argument('window-size=1600x900')
         options.add_argument('--no-sandbox')
         options.add_argument("--hide-scrollbars")
@@ -245,4 +243,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-display.stop()
+# display.stop()
