@@ -4,7 +4,7 @@ from time import sleep
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from src.scrap_counties_list import usa_county_list,local_listing,special_list
+from src.scrap_counties_list import usa_county_list,local_listing,special_list,usa_county_list1
 from selenium.webdriver.common.keys import Keys
 from src.utils import get_full_path
 from src.parser import keyword_map
@@ -52,6 +52,20 @@ class FenceInstallerScraper:
         # PROXY = proxies[0].get_address()
         # print(PROXY)
         # print(proxies[0].country)
+
+
+        # proxy = "localhost:8080"
+        # desired_capabilities = webdriver.DesiredCapabilities.CHROME.copy()
+        # desired_capabilities['proxy'] = {
+        #     "httpProxy": proxy,
+        #     "ftpProxy": proxy,
+        #     "sslProxy": proxy,
+        #     "noProxy": None,
+        #     "proxyType": "MANUAL",
+        #     "class": "org.openqa.selenium.Proxy",
+        #     "autodetect": False
+        # }
+
         options = Options()
         options.add_argument("start-maximized")
         # options.add_argument("--disable-extensions")
@@ -74,6 +88,7 @@ class FenceInstallerScraper:
         # print(f'Random IP test ==> {proxy}')
         # options.add_argument('--proxy-server=111.119.178.137:82')
 
+        # self.driver = webdriver.Chrome(options=options,desired_capabilities=desired_capabilities)
         self.driver = webdriver.Chrome(options=options)
 
     def __del__(self):
@@ -96,7 +111,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_26.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_28.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -212,7 +227,7 @@ class FenceInstallerScraper:
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
                     next_link.click()
-                    sleep(10)
+                    sleep(5)
                     self.get_data_with_rank()
                 except NoSuchElementException:
                     print('No next page')
@@ -236,9 +251,16 @@ class FenceInstallerScraper:
 
 
 def main():
-    for county in usa_county_list:
+    chi=1
+    checker=19
+    for county in usa_county_list1:
+        if chi>checker:
+            print(f'Check list pars {checker} {chi}')
+            checker=checker+19
+            sleep(1500)
         fence_installer = FenceInstallerScraper(county)
         fence_installer.start()
+        chi=chi+1
 
 
 if __name__ == "__main__":
