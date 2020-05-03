@@ -14,8 +14,8 @@ from fake_useragent import UserAgent
 from pyvirtualdisplay import Display
 # import random
 import xlsxwriter
-display = Display(visible=0, size=(800, 600))
-display.start()
+# display = Display(visible=0, size=(800, 600))
+# display.start()
 
 # options = Options()
 # options.add_argument("start-maximized")
@@ -45,17 +45,19 @@ class FenceInstallerScraper:
         self.rank_index = 1
         options = Options()
         options.add_argument("start-maximized")
-        options.add_argument("--disable-extensions")
+        # options.add_argument("--disable-extensions")
         # options.add_argument('--headless')
         ua = UserAgent()
         useragent = ua.random
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
-        options.add_argument('window-size=1920x1080')
+        options.add_argument('window-size=1600x900')
         options.add_argument('--no-sandbox')
         options.add_argument("--hide-scrollbars")
         options.add_argument("disable-infobars")
         options.add_argument('--disable-dev-shm-usage')
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option('useAutomationExtension', False)
         # proxies = ['10.0.1.1', '10.0.1.2', '10.0.1.3','111.119.178.137']
         # proxy = random.choice(proxies)
         # print(f'Random IP test ==> {proxy}')
@@ -83,7 +85,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_99.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_20.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -96,6 +98,7 @@ class FenceInstallerScraper:
         query = f'{q_keyword}{self.county} site:facebook.com'
         print(f'Query ==> {query}')
         input_q.send_keys(query)
+        sleep(2)
         input_q.send_keys(Keys.RETURN)
 
     def special_ext(self, param):
@@ -187,11 +190,11 @@ class FenceInstallerScraper:
             # action.move_to_element(eee).perform()
             # action.move_by_offset(600,200)
             # action.perform()
-            # self.set_cookies()
-            # input('Something..... = ')
-            sleep(5)
+            self.set_cookies()
+            sleep(8)
             self.input_query()
-            sleep(30)
+            # input('Something..... = ')
+            sleep(20)
             self.get_data_with_rank()
             pages_remain=True
             for i in range(2):
@@ -230,4 +233,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-display.stop()
+# display.stop()
