@@ -356,12 +356,24 @@ usa_county_list=[
                    # 'Union , Illinois', 'Vermilion , Illinois', 'Wabash , Illinois', 'Warren , Illinois',
                    # 'Washington , Illinois', 'Wayne , Illinois', 'White , Illinois', 'Whiteside , Illinois',
 
-                   'Will , Illinois', 'Williamson , Illinois', 'Winnebago , Illinois', 'Woodford , Illinois',
-                   'Adams , Indiana', 'Allen , Indiana', 'Bartholomew , Indiana', 'Benton , Indiana',
-                   'Blackford , Indiana', 'Boone , Indiana', 'Brown , Indiana', 'Carroll , Indiana', 'Cass , Indiana',
-                   'Clark , Indiana', 'Clay , Indiana', 'Clinton , Indiana', 'Crawford , Indiana', 'Daviess , Indiana',
-                   'Dearborn , Indiana', 'Decatur , Indiana', 'DeKalb , Indiana', 'Delaware , Indiana',
-                   'Dubois , Indiana', 'Elkhart , Indiana', 'Fayette , Indiana', 'Floyd , Indiana']
+                   # 'Will , Illinois', 'Williamson , Illinois', 'Winnebago , Illinois', 'Woodford , Illinois',
+                   # 'Adams , Indiana', 'Allen , Indiana', 'Bartholomew , Indiana', 'Benton , Indiana',
+                   # 'Blackford , Indiana', 'Boone , Indiana', 'Brown , Indiana', 'Carroll , Indiana', 'Cass , Indiana',
+                   # 'Clark , Indiana', 'Clay , Indiana', 'Clinton , Indiana', 'Crawford , Indiana', 'Daviess , Indiana',
+                   # 'Dearborn , Indiana', 'Decatur , Indiana', 'DeKalb , Indiana', 'Delaware , Indiana',
+                   # 'Dubois , Indiana', 'Elkhart , Indiana', 'Fayette , Indiana', 'Floyd , Indiana'
+
+                    #****************************************
+'Fountain , Indiana', 'Franklin , Indiana', 'Fulton , Indiana', 'Gibson , Indiana',
+                   'Grant , Indiana', 'Greene , Indiana', 'Hamilton , Indiana', 'Hancock , Indiana',
+                   'Harrison , Indiana', 'Hendricks , Indiana', 'Henry , Indiana', 'Howard , Indiana',
+                   'Huntington , Indiana', 'Jackson , Indiana', 'Jasper , Indiana', 'Jay , Indiana',
+                   'Jefferson , Indiana', 'Jennings , Indiana', 'Johnson , Indiana', 'Knox , Indiana',
+                   'Kosciusko , Indiana', 'LaGrange , Indiana', 'Lake , Indiana', 'LaPorte , Indiana',
+                   'Lawrence , Indiana', 'Madison , Indiana', 'Marion , Indiana', 'Marshall , Indiana'
+
+
+]
 usa_county_list1 = [
     # 'Autauga , Alabama', 'Baldwin , Alabama', 'Barbour , Alabama', 'Bibb , Alabama', 'Blount , Alabama',
     #                'Bullock , Alabama', 'Butler , Alabama', 'Calhoun , Alabama', 'Chambers , Alabama',
@@ -546,13 +558,15 @@ usa_county_list1 = [
     #                'Clark , Indiana', 'Clay , Indiana', 'Clinton , Indiana', 'Crawford , Indiana', 'Daviess , Indiana',
     #                'Dearborn , Indiana', 'Decatur , Indiana', 'DeKalb , Indiana', 'Delaware , Indiana',
     #                'Dubois , Indiana', 'Elkhart , Indiana', 'Fayette , Indiana', 'Floyd , Indiana',
-                   'Fountain , Indiana', 'Franklin , Indiana', 'Fulton , Indiana', 'Gibson , Indiana',
-                   'Grant , Indiana', 'Greene , Indiana', 'Hamilton , Indiana', 'Hancock , Indiana',
-                   'Harrison , Indiana', 'Hendricks , Indiana', 'Henry , Indiana', 'Howard , Indiana',
-                   'Huntington , Indiana', 'Jackson , Indiana', 'Jasper , Indiana', 'Jay , Indiana',
-                   'Jefferson , Indiana', 'Jennings , Indiana', 'Johnson , Indiana', 'Knox , Indiana',
-                   'Kosciusko , Indiana', 'LaGrange , Indiana', 'Lake , Indiana', 'LaPorte , Indiana',
-                   'Lawrence , Indiana', 'Madison , Indiana', 'Marion , Indiana', 'Marshall , Indiana',
+
+                   # 'Fountain , Indiana', 'Franklin , Indiana', 'Fulton , Indiana', 'Gibson , Indiana',
+                   # 'Grant , Indiana', 'Greene , Indiana', 'Hamilton , Indiana', 'Hancock , Indiana',
+                   # 'Harrison , Indiana', 'Hendricks , Indiana', 'Henry , Indiana', 'Howard , Indiana',
+                   # 'Huntington , Indiana', 'Jackson , Indiana', 'Jasper , Indiana', 'Jay , Indiana',
+                   # 'Jefferson , Indiana', 'Jennings , Indiana', 'Johnson , Indiana', 'Knox , Indiana',
+                   # 'Kosciusko , Indiana', 'LaGrange , Indiana', 'Lake , Indiana', 'LaPorte , Indiana',
+                   # 'Lawrence , Indiana', 'Madison , Indiana', 'Marion , Indiana', 'Marshall , Indiana',
+
                    'Martin , Indiana', 'Miami , Indiana', 'Monroe , Indiana', 'Montgomery , Indiana',
                    'Morgan , Indiana', 'Newton , Indiana', 'Noble , Indiana', 'Ohio , Indiana', 'Orange , Indiana',
                    'Owen , Indiana', 'Parke , Indiana', 'Perry , Indiana', 'Pike , Indiana', 'Porter , Indiana',
