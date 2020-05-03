@@ -14,8 +14,8 @@ from fake_useragent import UserAgent
 from pyvirtualdisplay import Display
 # import random
 import xlsxwriter
-# display = Display(visible=0, size=(800, 600))
-# display.start()
+display = Display(visible=0, size=(800, 600))
+display.start()
 
 # options = Options()
 # options.add_argument("start-maximized")
@@ -233,4 +233,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# display.stop()
+display.stop()
