@@ -10,6 +10,12 @@ from src.utils import get_full_path
 from src.parser import keyword_map
 from fake_useragent import UserAgent
 # from selenium.webdriver.common.action_chains import ActionChains
+# import socks
+# import socket
+# from urllib.request import Request, urlopen
+# socks.set_default_proxy(socks.SOCKS5, "localhost", 9050)
+# socket.socket = socks.socksocket
+from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 
 from pyvirtualdisplay import Display
 # import random
@@ -43,6 +49,11 @@ class FenceInstallerScraper:
                                 'Ranked-page-url': ''}
         self.county = county
         self.rank_index = 1
+        req_proxy = RequestProxy()  # you may get different number of proxy when  you run this at each time
+        proxies = req_proxy.get_proxy_list()
+        PROXY = proxies[0].get_address()
+        print(PROXY)
+        print(proxies[0].country)
         options = Options()
         options.add_argument("start-maximized")
         # options.add_argument("--disable-extensions")
@@ -51,6 +62,7 @@ class FenceInstallerScraper:
         useragent = ua.random
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
+        options.add_argument('--proxy-server=%s' % PROXY)
         options.add_argument('window-size=1600x900')
         options.add_argument('--no-sandbox')
         options.add_argument("--hide-scrollbars")
@@ -85,7 +97,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_21.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_24.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -191,7 +203,7 @@ class FenceInstallerScraper:
             # action.move_by_offset(600,200)
             # action.perform()
             self.set_cookies()
-            sleep(8)
+            sleep(15)
             self.input_query()
             # input('Something..... = ')
             sleep(20)

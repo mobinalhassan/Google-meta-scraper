@@ -363,14 +363,11 @@ usa_county_list=[
                    # 'Dearborn , Indiana', 'Decatur , Indiana', 'DeKalb , Indiana', 'Delaware , Indiana',
                    # 'Dubois , Indiana', 'Elkhart , Indiana', 'Fayette , Indiana', 'Floyd , Indiana'
 
-                    #****************************************
-'Fountain , Indiana', 'Franklin , Indiana', 'Fulton , Indiana', 'Gibson , Indiana',
-                   'Grant , Indiana', 'Greene , Indiana', 'Hamilton , Indiana', 'Hancock , Indiana',
-                   'Harrison , Indiana', 'Hendricks , Indiana', 'Henry , Indiana', 'Howard , Indiana',
-                   'Huntington , Indiana', 'Jackson , Indiana', 'Jasper , Indiana', 'Jay , Indiana',
-                   'Jefferson , Indiana', 'Jennings , Indiana', 'Johnson , Indiana', 'Knox , Indiana',
-                   'Kosciusko , Indiana', 'LaGrange , Indiana', 'Lake , Indiana', 'LaPorte , Indiana',
-                   'Lawrence , Indiana', 'Madison , Indiana', 'Marion , Indiana', 'Marshall , Indiana'
+                    #**********************
+
+    'Chickasaw , Iowa', 'Clarke , Iowa', 'Clay , Iowa', 'Clayton , Iowa',
+                   'Clinton , Iowa', 'Crawford , Iowa', 'Dallas , Iowa', 'Davis , Iowa', 'Decatur , Iowa',
+                   'Delaware , Iowa', 'Des Moines , Iowa', 'Dickinson , Iowa', 'Dubuque , Iowa', 'Emmet , Iowa',
 
 
 ]
@@ -567,22 +564,26 @@ usa_county_list1 = [
                    # 'Kosciusko , Indiana', 'LaGrange , Indiana', 'Lake , Indiana', 'LaPorte , Indiana',
                    # 'Lawrence , Indiana', 'Madison , Indiana', 'Marion , Indiana', 'Marshall , Indiana',
 
-                   'Martin , Indiana', 'Miami , Indiana', 'Monroe , Indiana', 'Montgomery , Indiana',
-                   'Morgan , Indiana', 'Newton , Indiana', 'Noble , Indiana', 'Ohio , Indiana', 'Orange , Indiana',
-                   'Owen , Indiana', 'Parke , Indiana', 'Perry , Indiana', 'Pike , Indiana', 'Porter , Indiana',
-                   'Posey , Indiana', 'Pulaski , Indiana', 'Putnam , Indiana', 'Randolph , Indiana', 'Ripley , Indiana',
-                   'Rush , Indiana', 'Saint Joseph , Indiana', 'Scott , Indiana', 'Shelby , Indiana',
-                   'Spencer , Indiana', 'Starke , Indiana', 'Steuben , Indiana', 'Sullivan , Indiana',
-                   'Switzerland , Indiana', 'Tippecanoe , Indiana', 'Tipton , Indiana', 'Union , Indiana',
-                   'Vanderburgh , Indiana', 'Vermillion , Indiana', 'Vigo , Indiana', 'Wabash , Indiana',
-                   'Warren , Indiana', 'Warrick , Indiana', 'Washington , Indiana', 'Wayne , Indiana',
-                   'Wells , Indiana', 'White , Indiana', 'Whitley , Indiana', 'Adair , Iowa', 'Adams , Iowa',
-                   'Allamakee , Iowa', 'Appanoose , Iowa', 'Audubon , Iowa', 'Benton , Iowa', 'Black Hawk , Iowa',
-                   'Boone , Iowa', 'Bremer , Iowa', 'Buchanan , Iowa', 'Buena Vista , Iowa', 'Butler , Iowa',
-                   'Calhoun , Iowa', 'Carroll , Iowa', 'Cass , Iowa', 'Cedar , Iowa', 'Cerro Gordo , Iowa',
-                   'Cherokee , Iowa', 'Chickasaw , Iowa', 'Clarke , Iowa', 'Clay , Iowa', 'Clayton , Iowa',
-                   'Clinton , Iowa', 'Crawford , Iowa', 'Dallas , Iowa', 'Davis , Iowa', 'Decatur , Iowa',
-                   'Delaware , Iowa', 'Des Moines , Iowa', 'Dickinson , Iowa', 'Dubuque , Iowa', 'Emmet , Iowa',
+                   # pushered ********************************************
+
+                   # 'Martin , Indiana', 'Miami , Indiana', 'Monroe , Indiana', 'Montgomery , Indiana',
+                   # 'Morgan , Indiana', 'Newton , Indiana', 'Noble , Indiana', 'Ohio , Indiana', 'Orange , Indiana',
+                   # 'Owen , Indiana', 'Parke , Indiana', 'Perry , Indiana', 'Pike , Indiana', 'Porter , Indiana',
+                   # 'Posey , Indiana', 'Pulaski , Indiana', 'Putnam , Indiana', 'Randolph , Indiana', 'Ripley , Indiana',
+                   # 'Rush , Indiana', 'Saint Joseph , Indiana', 'Scott , Indiana', 'Shelby , Indiana',
+                   # 'Spencer , Indiana', 'Starke , Indiana', 'Steuben , Indiana', 'Sullivan , Indiana',
+                   # 'Switzerland , Indiana', 'Tippecanoe , Indiana', 'Tipton , Indiana', 'Union , Indiana',
+                   # 'Vanderburgh , Indiana', 'Vermillion , Indiana', 'Vigo , Indiana', 'Wabash , Indiana',
+
+                   # 'Warren , Indiana', 'Warrick , Indiana', 'Washington , Indiana', 'Wayne , Indiana',
+                   # 'Wells , Indiana', 'White , Indiana', 'Whitley , Indiana', 'Adair , Iowa', 'Adams , Iowa',
+                   # 'Allamakee , Iowa', 'Appanoose , Iowa', 'Audubon , Iowa', 'Benton , Iowa', 'Black Hawk , Iowa',
+                   # 'Boone , Iowa', 'Bremer , Iowa', 'Buchanan , Iowa', 'Buena Vista , Iowa', 'Butler , Iowa',
+                   # 'Calhoun , Iowa', 'Carroll , Iowa', 'Cass , Iowa', 'Cedar , Iowa', 'Cerro Gordo , Iowa',
+                   # 'Cherokee , Iowa', 'Chickasaw , Iowa', 'Clarke , Iowa', 'Clay , Iowa', 'Clayton , Iowa',
+                   # 'Clinton , Iowa', 'Crawford , Iowa', 'Dallas , Iowa', 'Davis , Iowa', 'Decatur , Iowa',
+                   # 'Delaware , Iowa', 'Des Moines , Iowa', 'Dickinson , Iowa', 'Dubuque , Iowa', 'Emmet , Iowa',
+
                    'Fayette , Iowa', 'Floyd , Iowa', 'Franklin , Iowa', 'Fremont , Iowa', 'Greene , Iowa',
                    'Grundy , Iowa', 'Guthrie , Iowa', 'Hamilton , Iowa', 'Hancock , Iowa', 'Hardin , Iowa',
                    'Harrison , Iowa', 'Henry , Iowa', 'Howard , Iowa', 'Humboldt , Iowa', 'Ida , Iowa', 'Iowa , Iowa',
