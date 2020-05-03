@@ -253,11 +253,11 @@ class FenceInstallerScraper:
 def main():
     chi=1
     checker=19
-    for county in usa_county_list1:
-        if chi>checker:
-            print(f'Check list pars {checker} {chi}')
-            checker=checker+19
-            sleep(1500)
+    for county in usa_county_list:
+        # if chi>checker:
+        #     print(f'Check list pars {checker} {chi}')
+        #     checker=checker+19
+        #     sleep(1000)
         fence_installer = FenceInstallerScraper(county)
         fence_installer.start()
         chi=chi+1
