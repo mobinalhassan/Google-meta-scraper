@@ -111,7 +111,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_28.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_31.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
@@ -254,10 +254,11 @@ def main():
     chi=1
     checker=19
     for county in usa_county_list:
-        # if chi>checker:
-        #     print(f'Check list pars {checker} {chi}')
-        #     checker=checker+19
-        #     sleep(1000)
+        if chi>checker:
+            print(f'Check list pars {checker} {chi}')
+            checker=checker+19
+            sleep(1000)
+        print(f'Iteration NO => {chi}')
         fence_installer = FenceInstallerScraper(county)
         fence_installer.start()
         chi=chi+1
