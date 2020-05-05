@@ -30,14 +30,3 @@ user_agents = [
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2866.71 Safari/537.36']
-# print(list(dict.fromkeys(user_agents)))
-# print(len(user_agents))
-#
-# import random
-# for au in user_agents:
-#     print(random.choice(user_agents))
-
-# For shose and jelary
-# field and data store
-# tags
-# what type of info storing

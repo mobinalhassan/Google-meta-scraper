@@ -10,29 +10,11 @@ from src.utils import get_full_path
 from src.parser import keyword_map
 from src.user_agents import user_agents
 import random
-# from fake_useragent import UserAgent
-
-# from selenium.webdriver.common.action_chains import ActionChains
-
-# from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
-
+from fake_useragent import UserAgent
 from pyvirtualdisplay import Display
-# import random
 import xlsxwriter
 display = Display(visible=0, size=(800, 600))
 display.start()
-
-# options = Options()
-# options.add_argument("start-maximized")
-# options.add_argument("--disable-extensions")
-# # options.add_argument('--headless')
-# options.add_argument('window-size=1920x1080')
-# options.add_argument('--no-sandbox')
-# options.add_argument("--hide-scrollbars")
-# options.add_argument("disable-infobars")
-# options.add_argument('--disable-dev-shm-usage')
-# options.add_argument('--proxy-server=46.102.106.37:13228')
-
 
 class FenceInstallerScraper:
     fence_installers = []
@@ -48,37 +30,13 @@ class FenceInstallerScraper:
                                 'Ranked-page-url': ''}
         self.county = county
         self.rank_index = 1
-        # PROXY = "12.345.678.910:8080"
-
-        # req_proxy = RequestProxy()  # you may get different number of proxy when  you run this at each time
-        # proxies = req_proxy.get_proxy_list()
-        # PROXY = proxies[0].get_address()
-        # print(PROXY)
-        # print(proxies[0].country)
-
-
-        # proxy = "localhost:8080"
-        # desired_capabilities = webdriver.DesiredCapabilities.CHROME.copy()
-        # desired_capabilities['proxy'] = {
-        #     "httpProxy": proxy,
-        #     "ftpProxy": proxy,
-        #     "sslProxy": proxy,
-        #     "noProxy": None,
-        #     "proxyType": "MANUAL",
-        #     "class": "org.openqa.selenium.Proxy",
-        #     "autodetect": False
-        # }
-
         options = Options()
         options.add_argument("start-maximized")
-        # options.add_argument("--disable-extensions")
-        # options.add_argument('--headless')
         # ua = UserAgent()
         # useragent = ua.random
         useragent = random.choice(user_agents)
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
-        # options.add_argument('--proxy-server=%s' % PROXY)
         options.add_argument('window-size=1600x900')
         options.add_argument('--no-sandbox')
         options.add_argument("--hide-scrollbars")
@@ -86,12 +44,6 @@ class FenceInstallerScraper:
         options.add_argument('--disable-dev-shm-usage')
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option('useAutomationExtension', False)
-        # proxies = ['10.0.1.1', '10.0.1.2', '10.0.1.3','111.119.178.137']
-        # proxy = random.choice(proxies)
-        # print(f'Random IP test ==> {proxy}')
-        # options.add_argument('--proxy-server=111.119.178.137:82')
-
-        # self.driver = webdriver.Chrome(options=options,desired_capabilities=desired_capabilities)
         self.driver = webdriver.Chrome(options=options)
 
     def __del__(self):
@@ -115,14 +67,10 @@ class FenceInstallerScraper:
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
         dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_37_c3.xlsx"), engine='xlsxwriter')
-        # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
-        # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
 
     def input_query(self):
         input_q = self.driver.find_element_by_css_selector('input.gLFyf')
-        # "agricultural" and "farm"
-        # q_keyword = '\"agricultural\" and \"farm\" fence installers '
         q_keyword = 'agricultural and farm fence installers '
         query = f'{q_keyword}{self.county} site:facebook.com'
         print(f'Query ==> {query}')
@@ -136,10 +84,8 @@ class FenceInstallerScraper:
         return True
 
     def inrelevent(self,prami):
-        # self.check_irrelevent
         for word in prami:
             if word in ['directory','pages']:
-                # print('Misssssssssssssss......')
                 return True
 
         return False
@@ -154,14 +100,10 @@ class FenceInstallerScraper:
             result_soup: BeautifulSoup = BeautifulSoup(result_source_code, 'html.parser')
             try:
                 web_link_raw = result_soup.find('cite', class_='iUh30')
-                # print(f'Web link Raw => {web_link_raw}')
-                # for child in web_link_raw.find_all("span"):
-                #     child.decompose()
 
                 web_link = str(web_link_raw.get_text()).split(' ')[0]
                 try:
                     self.check_irrelevent=str(web_link_raw.get_text()).split(' ')[1:]
-                    # print(self.check_irrelevent)
                 except IndexError:
                     pass
                 self.fance_installer['Website'] = str(web_link).strip(' ').strip()
@@ -196,12 +138,9 @@ class FenceInstallerScraper:
             except Exception as error:
                 print(f'Error in getting Ranked page Link {error}')
 
-            # if not self.check_listing(self.fance_installer['Website']):
             if not self.inrelevent(self.check_irrelevent):
-            # if not self.fance_installer['Website'] in local_listing:
                 if self.special_ext(self.fance_installer['Website']):
                     if keyword_map(self.fance_installer):
-                    #     keyword_map(self.fance_installer)
                         print()
                         self.fence_installers.append(self.fance_installer.copy())
                         print(self.fance_installer)
@@ -214,18 +153,12 @@ class FenceInstallerScraper:
             self.driver.get(self.pro_url)
             user_agent = self.driver.execute_script("return navigator.userAgent;")
             print(f'Inner User aggent ==> {user_agent}')
-            # action = ActionChains(self.driver)
-            # eee = self.driver.find_element_by_css_selector('input.gLFyf')
-            # action.move_to_element(eee).perform()
-            # action.move_by_offset(600,200)
-            # action.perform()
             self.set_cookies()
             sleep(15)
             self.input_query()
             # input('Something..... = ')
             sleep(20)
             self.get_data_with_rank()
-            pages_remain=True
             for i in range(2):
                 try:
                     next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
@@ -235,18 +168,7 @@ class FenceInstallerScraper:
                 except NoSuchElementException:
                     print('No next page')
 
-            # while pages_remain:
-            #     try:
-            #         next_link=self.driver.find_element_by_css_selector('#pnnext span:nth-of-type(2)')
-            #         next_link.click()
-            #         sleep(5)
-            #         self.get_data_with_rank()
-            #     except NoSuchElementException:
-            #         print('No next page')
-            #         pages_remain=False
-
             self.save_excel_file()
-
             self.driver.quit()
         except Exception as error:
             print(f'Quitting form get pro link function ==> {error}')
