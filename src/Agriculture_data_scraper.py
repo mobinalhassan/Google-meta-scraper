@@ -8,7 +8,10 @@ from src.scrap_counties_list import usa_county_list,local_listing,special_list,u
 from selenium.webdriver.common.keys import Keys
 from src.utils import get_full_path
 from src.parser import keyword_map
-from fake_useragent import UserAgent
+from src.user_agents import user_agents
+import random
+# from fake_useragent import UserAgent
+
 # from selenium.webdriver.common.action_chains import ActionChains
 
 # from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
@@ -70,9 +73,9 @@ class FenceInstallerScraper:
         options.add_argument("start-maximized")
         # options.add_argument("--disable-extensions")
         # options.add_argument('--headless')
-        ua = UserAgent()
-        useragent = ua.random
-        # useragent = ua.chrome
+        # ua = UserAgent()
+        # useragent = ua.random
+        useragent = random.choice(user_agents)
         print(f'User Agent ==> {useragent}')
         options.add_argument(f'user-agent={useragent}')
         # options.add_argument('--proxy-server=%s' % PROXY)
@@ -111,7 +114,7 @@ class FenceInstallerScraper:
 
     def save_excel_file(self):
         dataframe = pd.DataFrame(self.fence_installers)
-        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_36_c2.xlsx"), engine='xlsxwriter')
+        dataframe.to_excel(get_full_path("../data/All_Fence_installers_facebook_37_c3.xlsx"), engine='xlsxwriter')
         # writer = pd.ExcelWriter(get_full_path("../data/All_Fence_installers.xlsx"), engine='xlsxwriter', options={'strings_to_urls': False})
         # dataframe.to_excel(writer)
         print(f'File saved! Records ==> {len(self.fence_installers)}')
