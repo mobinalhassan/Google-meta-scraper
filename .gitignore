@@ -16,6 +16,7 @@
 !/scripts/**
 !/commonutils/**
 !/src/notebooks/**/*.ipynb
-!data/*.csv
+!/src/notebook/**/*.ipynb
+!data/*
 /src/test.py
 /src/test_2.py
