@@ -4,7 +4,7 @@ from time import sleep
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from src.scrap_counties_list import usa_county_list,local_listing,special_list,usa_county_list1
+from src.scrap_counties_list import usa_county_list,local_listing,special_list
 from selenium.webdriver.common.keys import Keys
 from src.utils import get_full_path
 from src.parser import keyword_map
